@@ -14,6 +14,7 @@ import Seo from "./Pages/Seo";
 import Contenteditor from "./Pages/Contenteditor";
 import Support from "./Pages/Support";
 import Careers from "./Pages/Careers";
+import Settings from "./Pages/Settings";
 
 const RoutingApp = () => {
   return (
@@ -33,6 +34,7 @@ const RoutingApp = () => {
         <Route path="/content-editor" element={<Contenteditor />} />
         <Route path="/support-faq" element={<Support />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );
