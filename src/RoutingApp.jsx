@@ -12,6 +12,7 @@ import Rewards from "./Pages/Rewards";
 import Notifications from "./Pages/Notifications";
 import Seo from "./Pages/Seo";
 import Contenteditor from "./Pages/Contenteditor";
+import Support from "./Pages/Support";
 
 const RoutingApp = () => {
   return (
@@ -29,6 +30,7 @@ const RoutingApp = () => {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/seo-metadata" element={<Seo />} />
         <Route path="/content-editor" element={<Contenteditor />} />
+        <Route path="/support-faq" element={<Support />} />
       </Routes>
     </BrowserRouter>
   );
