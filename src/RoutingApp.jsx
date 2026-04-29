@@ -5,6 +5,7 @@ import DashboardaHome from "./Pages/DashboardaHome";
 import Websitecontent from "./Pages/Websitecontent";
 import Appcontent from "./Pages/Appcontent";
 import Chargingstations from "./Pages/Chargingstations";
+import Orders from "./Pages/Orders";
 
 const RoutingApp = () => {
   return (
@@ -15,6 +16,7 @@ const RoutingApp = () => {
         <Route path="/website-content" element={<Websitecontent />} />
         <Route path="/app-content" element={<Appcontent />} />
         <Route path="/charging-stations" element={<Chargingstations />} />
+        <Route path="/orders-sessions" element={<Orders />} />
       </Routes>
     </BrowserRouter>
   );
