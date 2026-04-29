@@ -13,6 +13,7 @@ import Notifications from "./Pages/Notifications";
 import Seo from "./Pages/Seo";
 import Contenteditor from "./Pages/Contenteditor";
 import Support from "./Pages/Support";
+import Careers from "./Pages/Careers";
 
 const RoutingApp = () => {
   return (
@@ -31,6 +32,7 @@ const RoutingApp = () => {
         <Route path="/seo-metadata" element={<Seo />} />
         <Route path="/content-editor" element={<Contenteditor />} />
         <Route path="/support-faq" element={<Support />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </BrowserRouter>
   );
