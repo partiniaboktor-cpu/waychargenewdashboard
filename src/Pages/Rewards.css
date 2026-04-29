@@ -1,0 +1,284 @@
+.rewards-management {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.configure-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.configure-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.add-reward-btn {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.add-reward-btn:hover {
+  opacity: 0.9;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+}
+
+.active-programs, .redemption-options, .top-earners-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.active-programs h3, .redemption-options h3, .top-earners-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.programs-list, .options-list, .earners-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program-card, .option-card, .earner-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.program-card:hover, .option-card:hover, .earner-card:hover {
+  border-color: rgba(152, 216, 63, 0.4);
+}
+
+.program-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.program-icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(152, 216, 63, 0.1);
+  color: var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.program-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.program-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.program-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.point-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #F59E0B;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.claimed-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.option-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.status-badge-mini {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge-mini.active, .status-badge-mini.available {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.status-badge-mini.inactive {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.status-badge-mini.out-of-stock {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.top-earners-section {
+  margin-top: 20px;
+}
+
+.earner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.earner-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rank-badge {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(152, 216, 63, 0.1);
+  color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.earner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.earner-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.earner-tier {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.earner-points {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #F59E0B;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .rewards-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .stats-row { grid-template-columns: 1fr; }
+}

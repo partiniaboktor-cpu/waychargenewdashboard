@@ -8,6 +8,7 @@ import Chargingstations from "./Pages/Chargingstations";
 import Orders from "./Pages/Orders";
 import Users from "./Pages/Users";
 import Transactions from "./Pages/Transactions";
+import Rewards from "./Pages/Rewards";
 
 const RoutingApp = () => {
   return (
@@ -21,6 +22,7 @@ const RoutingApp = () => {
         <Route path="/orders-sessions" element={<Orders />} />
         <Route path="/users-management" element={<Users />} />
         <Route path="/transactions" element={<Transactions />} />
+        <Route path="/rewards-points" element={<Rewards />} />
       </Routes>
     </BrowserRouter>
   );
