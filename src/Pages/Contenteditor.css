@@ -1,0 +1,182 @@
+.content-editor-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.preview-btn-dark {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-btn-brand {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-toolbar {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+  margin: 0 8px;
+}
+
+.editor-canvas {
+  padding: 40px;
+  min-height: 400px;
+}
+
+.canvas-content {
+  outline: none;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.canvas-content h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.editor-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 24px;
+}
+
+.recent-drafts-section, .publishing-options-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recent-drafts-section h3, .publishing-options-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.drafts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.draft-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+
+.draft-card:hover {
+  border-color: var(--accent-color);
+}
+
+.draft-title {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.draft-time {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.publishing-form {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.publishing-form input, 
+.publishing-form select {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  .editor-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}

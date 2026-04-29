@@ -1,0 +1,242 @@
+.seo-management {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.generate-sitemap-btn {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.generate-sitemap-btn:hover {
+  opacity: 0.9;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-overview-card, .edit-metadata-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-overview-card h3, .edit-metadata-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: background-color 0.2s;
+}
+
+.page-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.page-main-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.page-icon {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.page-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.page-path {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.edit-seo-btn {
+  background-color: #1E293B;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status-badge-mini {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.status-badge-mini.optimized {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.status-badge-mini.needs-attention {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+}
+
+.metadata-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.metadata-form input, 
+.metadata-form textarea, 
+.metadata-form select {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+}
+
+.metadata-form input:focus, 
+.metadata-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.helper-text {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.form-row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.save-changes-btn {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.preview-btn {
+  background-color: #1E293B;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .form-row-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .stats-row { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column; }
+}
