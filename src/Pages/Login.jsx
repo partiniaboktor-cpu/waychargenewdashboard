@@ -1,14 +1,42 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import logo from "../Assets/logo.png";
+import logo from "../Assets/logo.svg";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
+    // Simulate API Call
+    setTimeout(() => {
+      if (email === "waycharge@gmail.com" && password === "12345678") {
+        setSuccess(true);
+        setIsLoading(false);
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
+      } else if (!email || !password) {
+        setError("Please fill in all fields.");
+        setIsLoading(false);
+      } else {
+        setError("Invalid email or password. Please try again.");
+        setIsLoading(false);
+      }
+    }, 2000);
   };
 
   return (
@@ -22,7 +50,23 @@ const Login = () => {
               <p>Sign in to access your admin dashboard</p>
             </div>
 
-            <form className="login-form">
+            {/* UI Feedback: Error Message */}
+            {error && (
+              <div className="login-feedback error">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                {error}
+              </div>
+            )}
+
+            {/* UI Feedback: Success Message */}
+            {success && (
+              <div className="login-feedback success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Login successful! Redirecting...
+              </div>
+            )}
+
+            <form className="login-form" onSubmit={handleLogin}>
               <div className="input-group">
                 <label>Email Address</label>
                 <div className="input-wrapper">
@@ -34,6 +78,7 @@ const Login = () => {
                     placeholder="admin@waycharge.com" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    disabled={isLoading || success}
                   />
                 </div>
               </div>
@@ -49,11 +94,13 @@ const Login = () => {
                     placeholder="Enter your password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    disabled={isLoading || success}
                   />
                   <button 
                     type="button" 
                     className="password-toggle" 
                     onClick={togglePasswordVisibility}
+                    disabled={isLoading || success}
                   >
                     {showPassword ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
@@ -72,9 +119,18 @@ const Login = () => {
                 <a href="#" className="forgot-password">Forgot password?</a>
               </div>
 
-              <button type="submit" className="sign-in-btn">
-                Sign In 
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <button type="submit" className={`sign-in-btn ${isLoading ? 'loading' : ''}`} disabled={isLoading || success}>
+                {isLoading ? (
+                  <>
+                    <span className="spinner"></span>
+                    Signing In...
+                  </>
+                ) : (
+                  <>
+                    Sign In 
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  </>
+                )}
               </button>
 
               <div className="divider">
@@ -106,9 +162,6 @@ const Login = () => {
           </div>
           <div className="branding-text">
             <span className="brand-subtitle">Admin Dashboard</span>
-          </div>
-          <div className="version-info">
-            WayCharge Admin v2.0 © 2026
           </div>
         </div>
       </div>
