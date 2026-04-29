@@ -9,6 +9,7 @@ import Orders from "./Pages/Orders";
 import Users from "./Pages/Users";
 import Transactions from "./Pages/Transactions";
 import Rewards from "./Pages/Rewards";
+import Notifications from "./Pages/Notifications";
 
 const RoutingApp = () => {
   return (
@@ -23,6 +24,7 @@ const RoutingApp = () => {
         <Route path="/users-management" element={<Users />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/rewards-points" element={<Rewards />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
     </BrowserRouter>
   );
